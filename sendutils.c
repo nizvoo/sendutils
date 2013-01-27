@@ -61,7 +61,7 @@ int main(int argc, char* argv[])
   } else if (argc > 1) {
     _snprintf(ip, MAX_PATH, "%s", argv[1]);
   } else {
-    printf("Usage: sendutils.exe IP PORT\n");
+    printf("Usage: sendutils.exe [IP] [PORT]\n");
     return -1;
   }
   printf("User enter IP:%s, PORT:%d\n", ip, port);

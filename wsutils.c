@@ -48,3 +48,52 @@ SOCKET start_client_connection(const char* addr, short port)
 
   return s;
 }
+
+SOCKET start_tcp_server(short port)
+{
+  SOCKET s;
+  SOCKADDR_IN sock_addr;
+
+  s= socket(AF_INET, SOCK_STREAM, 0); 
+  if (s == INVALID_SOCKET)
+    return s;
+
+  memset(&sock_addr, 0, sizeof(sock_addr));
+  
+  sock_addr.sin_family      = AF_INET;
+  sock_addr.sin_addr.s_addr = htonl(INADDR_ANY);
+  sock_addr.sin_port        = htons(port);
+  
+  if (bind(s, (struct sockaddr*)&sock_addr, sizeof(sock_addr)) == SOCKET_ERROR)
+    return s;
+  
+  if (listen(s, SOMAXCONN) < 0) 
+    return s;
+  
+  return s;
+}
+
+SOCKET start_udp_server(short port)
+{
+  SOCKADDR_IN sock_addr;
+  SOCKET s;
+
+  s = socket(AF_INET, SOCK_DGRAM, 0);
+  
+  if (s == INVALID_SOCKET)
+    return s;
+
+  memset(&sock_addr, 0, sizeof(sock_addr));
+  
+  sock_addr.sin_family      = AF_INET;
+  sock_addr.sin_addr.s_addr = htonl(INADDR_ANY);
+  sock_addr.sin_port        = htons(port);
+  
+  if (bind(s, (struct sockaddr*)&sock_addr, sizeof(sock_addr)) == SOCKET_ERROR)
+    return s;
+  
+  if (listen(s, SOMAXCONN) < 0) 
+    return s;
+  
+  return s;
+}

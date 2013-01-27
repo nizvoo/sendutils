@@ -14,4 +14,7 @@ BOOL uninit_socket();
 
 SOCKET start_client_connection(const char* addr, short port);
 
+SOCKET start_tcp_server(short port);
+SOCKET start_udp_server(short port);
+
 #endif

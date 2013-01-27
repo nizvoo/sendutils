@@ -1,0 +1,18 @@
+CC = cl
+CXX = cl
+RM = del
+CP = copy
+BIN = sendutils.exe
+SRC = wsutils.c sendutils.c
+OBJ = sendutils.obj
+
+WSLIB = ws2_32.lib
+
+$(BIN): $(SRC)
+	$(CC) $(SRC) $(WSLIB) -o $(BIN)
+
+	
+PHONY: clean
+clean:
+	-$(RM) $(OBJ)
+	-$(RM) $(BIN)

@@ -8,7 +8,7 @@ RM = del
 CP = copy
 BIN = sendutils.exe
 SRC = wsutils.c sendutils.c
-OBJ = sendutils.obj
+OBJ = sendutils.obj wsutils.obj
 
 WSLIB = ws2_32.lib
 

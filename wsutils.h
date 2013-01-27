@@ -1,3 +1,8 @@
+/*
+  Copyright (C) 2000-2013
+  nizvoo@gmail.com
+*/
+
 #ifndef __WS_UTILS_H__
 #define __WS_UTILS_H__
 

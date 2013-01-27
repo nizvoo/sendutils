@@ -1,6 +1,6 @@
 /*
   Copyright (C) 2000-2013
-	zhangyong.ni@gmail.com
+  nizvoo@gmail.com
 */
 
 #include <stdio.h>
@@ -53,23 +53,23 @@ int test_tcp_client(const char* ip, short port)
 
 int main(int argc, char* argv[])
 {	
-	char ip[MAX_PATH + 1] = "192.168.1.108";
-	short port = 8000;
-	if (argc > 2) {
-		_snprintf(ip, MAX_PATH, "%s", argv[1]);
-		port = atoi(argv[2]);
-	} else if (argc > 1) {
-		_snprintf(ip, MAX_PATH, "%s", argv[1]);
-	} else {
-		printf("Usage: sendutils.exe IP PORT\n");
-		return -1;
-	}
-	printf("User enter IP:%s, PORT:%d\n", ip, port);
-	
-	init_socket();
-	
-	test_tcp_client(ip, port);
-	
-    uninit_socket();	
-	return 0;
+  char ip[MAX_PATH + 1] = "192.168.1.108";
+  short port = 8000;
+  if (argc > 2) {
+    _snprintf(ip, MAX_PATH, "%s", argv[1]);
+    port = atoi(argv[2]);
+  } else if (argc > 1) {
+    _snprintf(ip, MAX_PATH, "%s", argv[1]);
+  } else {
+    printf("Usage: sendutils.exe IP PORT\n");
+    return -1;
+  }
+  printf("User enter IP:%s, PORT:%d\n", ip, port);
+
+  init_socket();
+
+  test_tcp_client(ip, port);
+
+  uninit_socket();	
+  return 0;
 }

@@ -1,3 +1,8 @@
+/*
+  Copyright (C) 2000-2013
+  nizvoo@gmail.com
+*/
+
 #include "wsutils.h"
 
 BOOL init_socket()

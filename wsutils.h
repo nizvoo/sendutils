@@ -1,6 +1,6 @@
 /*
   Copyright (C) 2000-2013
-  nizvoo@gmail.com
+  nizvoo (AT) gmail.com
 */
 
 #ifndef __WS_UTILS_H__

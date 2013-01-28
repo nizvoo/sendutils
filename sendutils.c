@@ -23,7 +23,7 @@ int test_tcp_client(const char* ip, short port)
 
   s = start_client_connection(ip, port);
   if (s == SOCKET_ERROR || s == INVALID_SOCKET) {
-    printf("%d connecting failed\n", WSAGetLastError());
+    fprintf(stdout, "%d connecting failed\n", WSAGetLastError());
     return -1;
   } 
 
@@ -61,10 +61,10 @@ int main(int argc, char* argv[])
   } else if (argc > 1) {
     _snprintf(ip, MAX_PATH, "%s", argv[1]);
   } else {
-    printf("Usage: sendutils.exe [IP] [PORT]\n");
+    fprintf(stdout, "Usage: sendutils.exe [IP] [PORT]\n");
     return -1;
   }
-  printf("User enter IP:%s, PORT:%d\n", ip, port);
+  fprintf(stdout, "User enter IP:%s, PORT:%d\n", ip, port);
 
   init_socket();
 

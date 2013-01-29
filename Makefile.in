@@ -1,0 +1,21 @@
+#
+#  Copyright (C) 2000-2013
+#  nizvoo (AT) gmail.com
+#  Makefile for gcc
+#  MinGW + MSYS
+CC = gcc
+CXX = g++
+RM = RM
+CP = CP
+BIN = sendutils.exe
+SRC = wsutils.c sendutils.c
+
+WSLIB = -lws2_32
+
+$(BIN): $(SRC)
+	$(CC) $(SRC) $(WSLIB) -o $(BIN)
+
+	
+PHONY: clean
+clean:
+	-$(RM) $(BIN)

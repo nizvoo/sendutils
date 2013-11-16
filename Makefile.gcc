@@ -3,7 +3,9 @@
 #  nizvoo (AT) gmail.com
 #  Makefile for gcc
 #  MinGW + MSYS
-CC = gcc
+CC = $(CROSS)gcc
+LD = $(CROSS)ld
+AR = $(CROSS)ar
 CXX = g++
 RM = RM
 CP = CP
